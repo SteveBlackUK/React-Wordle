@@ -1,4 +1,6 @@
 import React from 'react'
+import toph from '../assets/chrisMcrae.jpeg'
+import './Modal.css'
 
 export default function Modal({ isCorrect, solution, turn }) {
   return (
@@ -8,6 +10,9 @@ export default function Modal({ isCorrect, solution, turn }) {
           <h1>You Win!</h1>
           <p className="solution">{solution}</p>
           <p>You found the solution in {turn} guesses :)</p>
+          <div className='container'>
+            <img className='spin circle' src={toph} alt="Mcrae"/>
+          </div>
         </div>
       )}
       {!isCorrect && (

@@ -1,0 +1,48 @@
+.container {
+    position: relative;
+    width: 200px;  /* adjust these values to suit your needs */
+    height: 200px;  /* adjust these values to suit your needs */
+    border-radius: 50%;
+    z-index: 0;  /* add this line */
+    overflow: hidden;
+  }
+  
+  .container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: #000; /* change this to your desired color */
+    animation: fade 2s 2s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+  }
+  
+  .circle {
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; /* to maintain aspect ratio */
+  }
+  
+  .spin {
+    animation: spin 2s cubic-bezier(0.25, 0.1, 0.25, 1);
+  }
+  
+  @keyframes spin {
+    from {
+      transform: rotateY(0deg);
+    }
+    to {
+      transform: rotateY(1080deg);
+    }
+  }
+  
+  @keyframes fade {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+  
